@@ -37,6 +37,8 @@ public:
     LayerColor* box;
     
     int stageCount;
+
+	string temp = "stage_1.xml";
 };
 
 #endif /* defined(__PX__GameScene__) */
