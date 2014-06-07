@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<stage gColor="7" bgColor="9" boxColor="5">
+    <items>
+        <item tag="2" color="4" width="50" height="50" position="20,0"/>
+        <item tag="3" color="4" width="50" height="50" position="50,0"/>
+        <item tag="4" color="4" width="50" height="50" position="80,0"/>
+    </items>
+</stage>
