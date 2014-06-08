@@ -82,6 +82,8 @@ void ItemFactory::createStage(Node &parent, const std::string &filename)
             createAction(*ite, str2num(action.attribute("type").as_string()),str2num(action.attribute("dura").as_string()), action.attribute("para").as_string());
         }
     }
+    
+    ground->setZOrder(parent.getChildrenCount());
 }
 
 Color3B ItemFactory::getColor(int color)
