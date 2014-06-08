@@ -175,7 +175,7 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         std::stringstream hh(hhh);
         hh>>height;
 
-        auto actionBy = ScaleBy::create(dura, 1.0f, 2.0f);
+        auto actionBy = ScaleBy::create(dura, width, height);
         auto seq = Sequence::create(actionBy, actionBy->reverse(), NULL);
         auto rep = RepeatForever::create(seq);
         node.runAction(rep);
