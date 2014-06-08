@@ -38,7 +38,7 @@ public:
     
     int stageCount;
 
-	string temp = "stage_1.xml";
+	string temp = "stage_17.xml";
 };
 
 #endif /* defined(__PX__GameScene__) */

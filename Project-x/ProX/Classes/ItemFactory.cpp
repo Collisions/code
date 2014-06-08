@@ -105,6 +105,8 @@ Color3B ItemFactory::getColor(int color)
             return Color3B::BLUE;
         case 9:
             return Color3B::WHITE;
+		case 10:
+			return Color3B::RBLUE;
         default:
             return Color3B::WHITE;
     }

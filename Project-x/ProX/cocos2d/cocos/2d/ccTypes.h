@@ -66,6 +66,7 @@ struct Color3B
     const static Color3B WHITE;
     const static Color3B YELLOW;
     const static Color3B BLUE;
+	const static Color3B RBLUE;
     const static Color3B GREEN;
     const static Color3B RED;
     const static Color3B MAGENTA;

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stage gColor="1" bgColor="9" boxColor="10">
+    <items>
+    	<item tag="1" color="7" width="50" height="50" position="30,0">
+      </item>
+      <item tag="2" color="7" width="50" height="50" position="50,10">
+        	<action type="1" dura="1" para="10,-10"></>
+      </item> 
+    </items>
+</stage>
