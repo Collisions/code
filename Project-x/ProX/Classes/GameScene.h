@@ -37,13 +37,10 @@ public:
     LayerColor* box;
     
     int stageCount;
-<<<<<<< HEAD
-    
-    int clickCount;
-=======
->>>>>>> FETCH_HEAD
 
 	string temp = "stage_17.xml";
+    
+    int clickCount;
 };
 
 #endif /* defined(__PX__GameScene__) */
