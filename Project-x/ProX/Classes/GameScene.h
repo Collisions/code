@@ -37,6 +37,8 @@ public:
     LayerColor* box;
     
     int stageCount;
+    
+    int clickCount;
 };
 
 #endif /* defined(__PX__GameScene__) */

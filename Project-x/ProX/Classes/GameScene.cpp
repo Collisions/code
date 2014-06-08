@@ -35,7 +35,7 @@ bool GameScene::init()
     }
     
     stageCount = 1;
-    
+    clickCount = 0;
     initUI();
     //initStage();
     return true;
@@ -152,8 +152,12 @@ void GameScene::update(float f)
 
 void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 {
-    auto actionBy = JumpBy::create(0.5f, Point(0, 0), 80, 1);
-    box->runAction(actionBy);
+    if(clickCount < 2)
+    {
+        clickCount++;
+        auto actionBy = JumpBy::create(0.5f, Point(0, 0), 80, 1);
+        box->runAction(actionBy);
+    }
 }
 
 void GameScene::menuStartCallback(Ref* pSender)
@@ -178,7 +182,8 @@ void GameScene::menuStartCallback(Ref* pSender)
 
 void GameScene::menuPauseCallback(Ref* pSender)
 {
-    //Director::getInstance()->pause();
+    Director::getInstance()->getActionManager()->pauseAllRunningActions();
+    Director::getInstance()->getActionManager()->removeAllActionsFromTarget(this);
 }
 
 
