@@ -183,9 +183,8 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         node.runAction(rep);
     } else if (type == 3)
     {
-        auto actionBy = RotateBy::create(dura ,  360);
-        auto rep = RepeatForever::create(actionBy);
-        node.runAction(rep);
+        auto action2 = FadeOut::create(0.5f);
+        node.runAction(action2);
     }
     
 }
