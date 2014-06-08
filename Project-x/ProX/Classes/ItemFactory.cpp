@@ -181,6 +181,11 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         auto seq = Sequence::create(actionBy, actionBy->reverse(), NULL);
         auto rep = RepeatForever::create(seq);
         node.runAction(rep);
+    } else if (type == 3)
+    {
+        auto actionBy = RotateBy::create(dura ,  360);
+        auto rep = RepeatForever::create(actionBy);
+        node.runAction(rep);
     }
     
 }

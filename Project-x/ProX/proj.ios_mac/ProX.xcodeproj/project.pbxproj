@@ -80,6 +80,7 @@
 		9D050FC5194439B400CE7AD4 /* stage_18.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9D050FB1194439B400CE7AD4 /* stage_18.xml */; };
 		9D050FC6194439B400CE7AD4 /* stage_19.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9D050FB2194439B400CE7AD4 /* stage_19.xml */; };
 		9D050FC7194439B400CE7AD4 /* stage_20.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9D050FB3194439B400CE7AD4 /* stage_20.xml */; };
+		9D050FCD194452D300CE7AD4 /* stage_0.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9D050FCC194452D300CE7AD4 /* stage_0.xml */; };
 		9D106BF4193E01E900A3A67A /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF2193E01E900A3A67A /* pugixml.cpp */; };
 		9D106BFA193E07B700A3A67A /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF6193E07B700A3A67A /* GameScene.cpp */; };
 		9D106C0B193E0F3C00A3A67A /* stage_1.xml in Resources */ = {isa = PBXBuildFile; fileRef = 9D106C09193E0F3C00A3A67A /* stage_1.xml */; };
@@ -302,6 +303,7 @@
 		9D050FB1194439B400CE7AD4 /* stage_18.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = stage_18.xml; path = stage/stage_18.xml; sourceTree = "<group>"; };
 		9D050FB2194439B400CE7AD4 /* stage_19.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = stage_19.xml; path = stage/stage_19.xml; sourceTree = "<group>"; };
 		9D050FB3194439B400CE7AD4 /* stage_20.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = stage_20.xml; path = stage/stage_20.xml; sourceTree = "<group>"; };
+		9D050FCC194452D300CE7AD4 /* stage_0.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = stage_0.xml; path = stage/stage_0.xml; sourceTree = "<group>"; };
 		9D106BF1193E01E900A3A67A /* pugiconfig.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = pugiconfig.hpp; path = ../Classes/pugiconfig.hpp; sourceTree = "<group>"; };
 		9D106BF2193E01E900A3A67A /* pugixml.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = pugixml.cpp; path = ../Classes/pugixml.cpp; sourceTree = "<group>"; };
 		9D106BF3193E01E900A3A67A /* pugixml.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = pugixml.hpp; path = ../Classes/pugixml.hpp; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 		9D106C06193E0D2E00A3A67A /* stage */ = {
 			isa = PBXGroup;
 			children = (
+				9D050FCC194452D300CE7AD4 /* stage_0.xml */,
 				9D050FA0194439B400CE7AD4 /* stage_1.xml */,
 				9D050FA1194439B400CE7AD4 /* stage_2.xml */,
 				9D050FA2194439B400CE7AD4 /* stage_3.xml */,
@@ -737,6 +740,7 @@
 				9D050FC4194439B400CE7AD4 /* stage_17.xml in Resources */,
 				5087E78517EB970100C73F5D /* Icon-72.png in Resources */,
 				9D050FC2194439B400CE7AD4 /* stage_15.xml in Resources */,
+				9D050FCD194452D300CE7AD4 /* stage_0.xml in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				9D050FBB194439B400CE7AD4 /* stage_8.xml in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
