@@ -2,6 +2,7 @@
 <stage gColor="1" bgColor="9" boxColor="10">
     <items>
         <item tag="1" color="7" width="50" height="50" position="50,0">
+            <action type="2" dura="1" para="20,0"></action>
         </item>
     </items>
 </stage>

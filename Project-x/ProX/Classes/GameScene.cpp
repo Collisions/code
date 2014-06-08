@@ -152,7 +152,7 @@ void GameScene::update(float f)
 
 void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 {
-    if(clickCount < 2)
+    //if(clickCount < 2)
     {
         clickCount++;
         auto actionBy = JumpBy::create(0.5f, Point(0, 0), 80, 1);

@@ -112,9 +112,9 @@ Color3B ItemFactory::getColor(int color)
     }
 }
 
-int ItemFactory::str2num(const std::string &str)
+float ItemFactory::str2num(const std::string &str)
 {
-    int f;
+    float f;
     std::stringstream ff(str);
     ff>>f;
     return f;
@@ -139,7 +139,7 @@ void ItemFactory::setPositionByStr(Node &node, const std::string &pos)
     
 }
 
-void ItemFactory::createAction(Node &node, int type, int dura, const std::string &para)
+void ItemFactory::createAction(Node &node, int type, float dura, const std::string &para)
 {
     
     if(type == 1)
@@ -160,6 +160,23 @@ void ItemFactory::createAction(Node &node, int type, int dura, const std::string
         auto move = MoveBy::create(dura, Point(size.width * width/100, size.height * height/100));
         auto move_back = move->reverse();
         auto seq = Sequence::create(move, move_back, NULL);
+        auto rep = RepeatForever::create(seq);
+        node.runAction(rep);
+    } else if (type == 2)
+    {
+        unsigned long index = para.find_first_of(",");
+        
+        std::string www = para.substr(0, index);
+        std::string hhh = para.substr(index + 1, para.length());
+        
+        int width,height;
+        std::stringstream ww(www);
+        ww>>width;
+        std::stringstream hh(hhh);
+        hh>>height;
+
+        auto actionBy = ScaleBy::create(dura, 1.0f, 2.0f);
+        auto seq = Sequence::create(actionBy, actionBy->reverse(), NULL);
         auto rep = RepeatForever::create(seq);
         node.runAction(rep);
     }

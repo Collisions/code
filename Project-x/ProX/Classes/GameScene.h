@@ -38,7 +38,7 @@ public:
     
     int stageCount;
 
-	string temp = "stage_17.xml";
+	string temp = "stage_1.xml";
     
     int clickCount;
 };

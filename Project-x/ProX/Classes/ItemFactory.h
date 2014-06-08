@@ -26,11 +26,11 @@ public:
     
     Color3B getColor(int color);
     
-    int str2num(const std::string &str);
+    float str2num(const std::string &str);
     
     void setPositionByStr(Node &node, const std::string &pos);
     
-    void createAction(Node &node, int type, int dura, const std::string &para);
+    void createAction(Node &node, int type, float dura, const std::string &para);
 };
 
 
