@@ -222,6 +222,7 @@ const Color3B Color3B::WHITE  (255, 255, 255);
 const Color3B Color3B::YELLOW (255, 255,   0);
 const Color3B Color3B::GREEN  (  0, 255,   0);
 const Color3B Color3B::BLUE   (  0,   0, 255);
+const Color3B Color3B::RBLUE  ( 65, 105, 225);
 const Color3B Color3B::RED    (255,   0,   0);
 const Color3B Color3B::MAGENTA(255,   0, 255);
 const Color3B Color3B::BLACK  (  0,   0,   0);

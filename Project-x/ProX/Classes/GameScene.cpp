@@ -99,7 +99,7 @@ void GameScene::initStage()
 
 void GameScene::nextStage()
 {
-    drawStage("stage_2.xml");
+    drawStage(temp);
 }
 
 void GameScene::drawStage(const std::string &filename)
@@ -162,7 +162,7 @@ void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 
 void GameScene::menuStartCallback(Ref* pSender)
 {
-    drawStage("stage_1.xml");
+    drawStage(temp);
     auto logo = getChildByTag(LOGO);
     if(logo)logo->removeFromParent();
     auto startMenu = getChildByTag(START);
