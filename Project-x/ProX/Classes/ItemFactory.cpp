@@ -169,7 +169,7 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         std::string www = para.substr(0, index);
         std::string hhh = para.substr(index + 1, para.length());
         
-        int width,height;
+        float width,height;
         std::stringstream ww(www);
         ww>>width;
         std::stringstream hh(hhh);
