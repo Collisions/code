@@ -99,7 +99,11 @@ void GameScene::initStage()
 
 void GameScene::nextStage()
 {
-    drawStage(temp);
+	stageCount++;
+	ostringstream oss;
+	oss << "stage_" << stageCount << ".xml";
+	string stage = oss.str();
+	drawStage(stage);
 }
 
 void GameScene::drawStage(const std::string &filename)
@@ -131,6 +135,7 @@ void GameScene::update(float f)
             auto startMenu = Menu::create(startItem, NULL);
             startMenu->setPosition(Point::ZERO);
             this->addChild(startMenu);
+			stageCount = 1;
             startMenu->setTag(START);
             return;
         }
@@ -145,7 +150,7 @@ void GameScene::update(float f)
         nextStage();
 
         box->setPosition(0, 150);
-        box->runAction(MoveBy::create(2, Point(size.width, 0)));
+		box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
 
     }
 }
@@ -155,7 +160,7 @@ void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
     //if(clickCount < 2)
     {
         clickCount++;
-        auto actionBy = JumpBy::create(0.5f, Point(0, 0), 80, 1);
+		auto actionBy = JumpBy::create(0.5f, Point(0, 0), jump_height, 1);
         box->runAction(actionBy);
     }
 }
@@ -175,7 +180,7 @@ void GameScene::menuStartCallback(Ref* pSender)
     
     auto size = Director::getInstance()->getVisibleSize();
     box->setPosition(0, 150);
-    box->runAction(MoveBy::create(2, Point(size.width, 0)));
+	box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
     
     scheduleUpdate();
 }

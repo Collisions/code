@@ -41,6 +41,10 @@ public:
 	string temp = "stage_1.xml";
     
     int clickCount;
+
+	float speed_time = 2.3f;
+
+	float jump_height = 90;
 };
 
 #endif /* defined(__PX__GameScene__) */
