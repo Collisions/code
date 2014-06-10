@@ -27,11 +27,14 @@
 #import "cocos2d.h"
 #import "AppDelegate.h"
 #import "RootViewController.h"
+#import "GADBannerView.h"
 
 @implementation AppController
 
 #pragma mark -
 #pragma mark Application lifecycle
+
+#define MY_BANNER_UNIT_ID @"ca-app-pub-6282509312996743/6720295117"
 
 // cocos2d application instance
 static AppDelegate s_sharedApplication;
@@ -56,7 +59,7 @@ static AppDelegate s_sharedApplication;
     _viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
     _viewController.wantsFullScreenLayout = YES;
     _viewController.view = eaglView;
-
+   
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
@@ -76,6 +79,22 @@ static AppDelegate s_sharedApplication;
     // IMPORTANT: Setting the GLView should be done after creating the RootViewController
     cocos2d::GLView *glview = cocos2d::GLView::createWithEAGLView(eaglView);
     cocos2d::Director::getInstance()->setOpenGLView(glview);
+    
+    //-------Start Admob------------
+    //kGADAdSizeBanner
+    GADBannerView * bannerView_ = [[GADBannerView alloc] initWithAdSize:kGADAdSizeBanner];
+    //GADBannerView * bannerView_ = [[GADBannerView alloc] initWithFrame:CGRectMake(100,0,320,50)];
+    
+    bannerView_.rootViewController = _viewController;
+    
+    bannerView_.adUnitID = MY_BANNER_UNIT_ID;
+    
+    [_viewController.view addSubview:bannerView_];
+    
+    [bannerView_ loadRequest:[GADRequest request]];
+    
+    //-------Admob end----------------
+
 
     cocos2d::Application::getInstance()->run();
 
