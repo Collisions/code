@@ -28,7 +28,7 @@ public:
     void onTouchesBegan(const vector<Touch*>& touches, Event* event);
     
     void initUI();
-    void initStage();
+    void updateScore();
     void nextStage();
     void drawStage(const string &filename);
     
