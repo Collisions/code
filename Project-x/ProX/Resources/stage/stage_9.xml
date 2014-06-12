@@ -5,6 +5,7 @@
         	<action type="1" dura="1" para="0,5"></action>
         </item>
         <item tag="2" color="7" width="50" height="50" position="60,0">
+        	<action type="1" dura="1" para="10,0"></action>
         </item>
     </items>
 </stage>
