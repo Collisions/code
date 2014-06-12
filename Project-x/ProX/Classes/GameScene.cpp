@@ -86,6 +86,20 @@ void GameScene::initUI()
 	this->addChild(startMenu);
     startMenu->setTag(START);
     
+    LanguageType lan = Application::getInstance()->getCurrentLanguage();
+    LabelTTF* label;
+    if (lan == LanguageType::CHINESE) {
+        label = LabelTTF::create("点击屏幕跳跃，可以连跳两次哦！", "Arial", 24);
+    } else {
+        label = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 24);
+    }
+    
+    auto labelSize = label->cocos2d::Node::getContentSize();
+    // position the label on the center of the screen
+    label->setPosition(Point((size.width - labelSize.width)/2,60));
+    this->addChild(label);
+
+    
     box = LayerColor::create(Color4B::RED, 50, 50);
     box->setPosition(Point(0, 150));
     this->addChild(box);
