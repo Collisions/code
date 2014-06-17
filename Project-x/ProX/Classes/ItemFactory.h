@@ -33,6 +33,8 @@ public:
     void createAction(Node &node, int type, float dura, const std::string &para);
 
 	void scale(Node* node);
+    
+    Point getPoint(const std::string &str);
 };
 
 

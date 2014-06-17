@@ -38,8 +38,9 @@ public:
     
     int stageCount;
 
-	string temp = "stage_6.xml";
+	string temp = "stage_0.xml";
 
+    void ACallback(Node* sender);
     
     int clickCount;
 

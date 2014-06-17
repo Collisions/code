@@ -180,16 +180,24 @@ void GameScene::update(float f)
 
 void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 {
-    //if(clickCount < 2)
+    if(clickCount < 2)
     {
         clickCount++;
-		auto actionBy = JumpBy::create(0.5f, Point(0, 0), jump_height, 1);
-        box->runAction(actionBy);
+        auto action = Sequence::create(JumpBy::create(0.5f, Point(0, 0), jump_height, 1),
+            CallFuncN::create(CC_CALLBACK_1(GameScene::ACallback, this)), NULL);
+        box->runAction(action);
     }
+}
+
+void GameScene::ACallback(Node* sender)
+{
+    log("---------->>>>");
+    clickCount = 0;
 }
 
 void GameScene::menuStartCallback(Ref* pSender)
 {
+    clickCount = 0;
     drawStage(temp);
     auto logo = getChildByTag(LOGO);
     if(logo)logo->removeFromParent();
@@ -203,7 +211,7 @@ void GameScene::menuStartCallback(Ref* pSender)
     
     auto size = Director::getInstance()->getVisibleSize();
     box->setPosition(0, 150);
-	box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
+	//box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
     
     scheduleUpdate();
 }

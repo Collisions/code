@@ -9,6 +9,7 @@
 #include "ItemFactory.h"
 #include "pugixml.hpp"
 #include "resource.h"
+#include "Tools.h"
 
 #define GET_COLOR(color) getColor(str2num(color))
 #define SET_COLOR(node, color) node->setColor(getColor(str2num(color)))
@@ -184,8 +185,10 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         node.runAction(rep);
     } else if (type == 3)
     {
-        auto action2 = FadeOut::create(0.5f);
-        node.runAction(action2);
+        auto action = FadeOut::create(dura);
+        auto seq = Sequence::create(action, action->reverse(), NULL);
+        auto rep = RepeatForever::create(seq);
+        node.runAction(rep);
 	} else if (type == 4)
 	{
 		unsigned long index = para.find_first_of(",");
@@ -205,16 +208,49 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
 			MoveBy::create(dura, Point(size.width * width / 100, size.height * height / 100)),
 			CallFuncN::create(CC_CALLBACK_1(ItemFactory::scale, this)),NULL));
 		
-	}
+	} else if (type == 5)
+    {
+        
+        std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
+    
+        auto array = PointArray::create(20);
+        for (std::string sub : vec)
+        {
+            array->addControlPoint(getPoint(sub));
+        }
+        
+        auto action = CardinalSplineBy::create(dura, array, 0);
+        auto reverse = action->reverse();
+        
+        auto seq = Sequence::create(action, reverse, NULL);
+        node.runAction(seq);
+        
+    }
 	
 }
+    
 void ItemFactory::scale(Node* node)
 {
 	node->stopAllActions(); //After this stop next action not working, if remove this stop everything is working
 	node->runAction(ScaleTo::create(50, 50));
 }
 
-
-
+Point ItemFactory::getPoint(const std::string &str)
+{
+    unsigned long index = str.find_first_of(",");
+    
+    std::string www = str.substr(0, index);
+    std::string hhh = str.substr(index + 1, str.length());
+    
+    int width,height;
+    std::stringstream ww(www);
+    ww>>width;
+    std::stringstream hh(hhh);
+    hh>>height;
+    
+    auto size = Director::getInstance()->getVisibleSize();
+    log("x====%f, y====%f", size.width * width/100, size.height * height/100 + 150);
+    return Point(size.width * width/100, size.height * height/100);
+}
 
 

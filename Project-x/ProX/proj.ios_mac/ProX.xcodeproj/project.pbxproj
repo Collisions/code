@@ -74,6 +74,7 @@
 		9D106BF4193E01E900A3A67A /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF2193E01E900A3A67A /* pugixml.cpp */; };
 		9D106BFA193E07B700A3A67A /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF6193E07B700A3A67A /* GameScene.cpp */; };
 		9D106C19193F440000A3A67A /* ItemFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106C17193F440000A3A67A /* ItemFactory.cpp */; };
+		9DAED16A19507DA900FE5F3D /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DAED16819507DA900FE5F3D /* Tools.cpp */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712471292920000B8313A /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB412928DE900B8313A /* libz.dylib */; };
 		BF1C47F01293687400B63C5D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF1C47EA1293683800B63C5D /* QuartzCore.framework */; };
@@ -301,6 +302,8 @@
 		9D106BF8193E07B700A3A67A /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../Classes/resource.h; sourceTree = "<group>"; };
 		9D106C17193F440000A3A67A /* ItemFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemFactory.cpp; path = ../Classes/ItemFactory.cpp; sourceTree = "<group>"; };
 		9D106C18193F440000A3A67A /* ItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemFactory.h; path = ../Classes/ItemFactory.h; sourceTree = "<group>"; };
+		9DAED16819507DA900FE5F3D /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = ../Classes/Tools.cpp; sourceTree = "<group>"; };
+		9DAED16919507DA900FE5F3D /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = ../Classes/Tools.h; sourceTree = "<group>"; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB412928DE900B8313A /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		BF1C47EA1293683800B63C5D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -396,6 +399,8 @@
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				9D106C17193F440000A3A67A /* ItemFactory.cpp */,
 				9D106C18193F440000A3A67A /* ItemFactory.h */,
+				9DAED16819507DA900FE5F3D /* Tools.cpp */,
+				9DAED16919507DA900FE5F3D /* Tools.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -751,6 +756,7 @@
 				9D106BF4193E01E900A3A67A /* pugixml.cpp in Sources */,
 				503AE10017EB989F00D1A890 /* AppController.mm in Sources */,
 				9D106C19193F440000A3A67A /* ItemFactory.cpp in Sources */,
+				9DAED16A19507DA900FE5F3D /* Tools.cpp in Sources */,
 				503AE10217EB989F00D1A890 /* RootViewController.mm in Sources */,
 				1AFAF8B716D35DE700DB1158 /* AppDelegate.cpp in Sources */,
 				9D106BFA193E07B700A3A67A /* GameScene.cpp in Sources */,
