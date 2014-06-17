@@ -211,7 +211,7 @@ void GameScene::menuStartCallback(Ref* pSender)
     
     auto size = Director::getInstance()->getVisibleSize();
     box->setPosition(0, 150);
-	//box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
+	box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
     
     scheduleUpdate();
 }
