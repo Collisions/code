@@ -37,7 +37,6 @@ bool GameScene::init()
     stageCount = 1;
     clickCount = 0;
     initUI();
-    //initStage();
     return true;
 }
 
@@ -87,18 +86,25 @@ void GameScene::initUI()
     startMenu->setTag(START);
     
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
-    LabelTTF* label;
+    LabelTTF* tips;
     if (lan == LanguageType::CHINESE) {
-        label = LabelTTF::create("kjhkjhczkjczxjck", "Arial", 24);
+        tips = LabelTTF::create("dfsdfsdfsdfds", "Arial", 24);
     } else {
-        label = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 24);
+        tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 24);
     }
     
-    auto labelSize = label->cocos2d::Node::getContentSize();
+    auto tipsSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
-    label->setPosition(Point((size.width - labelSize.width)/2,60));
-    this->addChild(label);
+    tips->setPosition(Point((size.width - tipsSize.width)/2,60));
+    this->addChild(tips);
 
+    auto score = LabelTTF::create("Score:0", "Arial", 24);
+    score->setColor(Color3B::BLACK);
+    auto scoreSize = tips->cocos2d::Node::getContentSize();
+    // position the label on the center of the screen
+    score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 112));
+    this->addChild(score);
+    score->setTag(SCORE);
     
     box = LayerColor::create(Color4B::RED, 50, 50);
     box->setPosition(Point(0, 150));
@@ -106,9 +112,12 @@ void GameScene::initUI()
     box->setTag(PLAYER);
 }
 
-void GameScene::initStage()
+void GameScene::updateScore()
 {
-    drawStage("stage_1.xml");
+    auto score = (LabelTTF*)(this->getChildByTag(SCORE));
+    ostringstream oss;
+    oss << "Score:" << (stageCount-1);
+    score->setString(oss.str());
 }
 
 void GameScene::nextStage()
@@ -162,7 +171,7 @@ void GameScene::update(float f)
         actionManager->removeAllActions();
         
         nextStage();
-
+        updateScore();
         box->setPosition(0, 150);
 		box->runAction(MoveBy::create(speed_time, Point(size.width, 0)));
 
