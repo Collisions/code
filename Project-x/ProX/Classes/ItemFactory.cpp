@@ -43,6 +43,7 @@ void ItemFactory::createStage(Node &parent, const std::string &filename)
     pugi::xml_document* doc;
     long size;
     std::string filePath = FileUtils::getInstance()->fullPathForFilename(filename);
+    //log("=>%s", filePath);
     unsigned char* data = FileUtils::getInstance()->getFileData(filePath, "rb", &size);
     
     if(!data)
