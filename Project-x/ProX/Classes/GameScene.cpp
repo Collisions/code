@@ -88,7 +88,7 @@ void GameScene::initUI()
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
     LabelTTF* tips;
     if (lan == LanguageType::CHINESE) {
-        tips = LabelTTF::create("点击屏幕跳跃，可以连跳两次哦！", "Arial", 24);
+        tips = LabelTTF::create("dfsdfsdfsdfds", "Arial", 24);
     } else {
         tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 24);
     }
@@ -126,7 +126,7 @@ void GameScene::nextStage()
 	ostringstream oss;
 	oss << "stage_" << stageCount << ".xml";
 	string stage = oss.str();
-	drawStage(stage);
+	drawStage(temp);
 }
 
 void GameScene::drawStage(const std::string &filename)

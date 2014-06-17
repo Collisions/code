@@ -38,7 +38,11 @@ public:
     
     int stageCount;
 
+<<<<<<< HEAD
 	string temp = "stage_6.xml";
+=======
+	string temp = "stage_0.xml";
+>>>>>>> FETCH_HEAD
     
     int clickCount;
 

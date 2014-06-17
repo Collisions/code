@@ -31,6 +31,8 @@ public:
     void setPositionByStr(Node &node, const std::string &pos);
     
     void createAction(Node &node, int type, float dura, const std::string &para);
+
+	void scale(Node* node);
 };
 
 

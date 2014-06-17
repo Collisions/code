@@ -186,9 +186,34 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
     {
         auto action2 = FadeOut::create(0.5f);
         node.runAction(action2);
-    }
-    
+	} else if (type == 4)
+	{
+		unsigned long index = para.find_first_of(",");
+
+		std::string www = para.substr(0, index);
+		std::string hhh = para.substr(index + 1, para.length());
+
+		float width, height;
+		std::stringstream ww(www);
+		ww >> width;
+		std::stringstream hh(hhh);
+		hh >> height;
+
+		auto size = Director::getInstance()->getVisibleSize();
+		
+		node.runAction(Sequence::create(
+			MoveBy::create(dura, Point(size.width * width / 100, size.height * height / 100)),
+			CallFuncN::create(CC_CALLBACK_1(ItemFactory::scale, this)),NULL));
+		
+	}
+	
 }
+void ItemFactory::scale(Node* node)
+{
+	node->stopAllActions(); //After this stop next action not working, if remove this stop everything is working
+	node->runAction(ScaleTo::create(50, 50));
+}
+
 
 
 
