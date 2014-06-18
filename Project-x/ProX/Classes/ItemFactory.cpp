@@ -189,52 +189,70 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
         auto seq = Sequence::create(action, action->reverse(), NULL);
         auto rep = RepeatForever::create(seq);
         node.runAction(rep);
-		} else if (type == 4)
-		{
-				unsigned long index = para.find_first_of(",");
+    } else if (type == 4)
+    {
+        unsigned long index = para.find_first_of(",");
 		
-				std::string www = para.substr(0, index);
-				std::string hhh = para.substr(index + 1, para.length());
+        std::string www = para.substr(0, index);
+        std::string hhh = para.substr(index + 1, para.length());
 		
-				float width, height;
-				std::stringstream ww(www);
-				ww >> width;
-				std::stringstream hh(hhh);
-				hh >> height;
+        float width, height;
+        std::stringstream ww(www);
+        ww >> width;
+        std::stringstream hh(hhh);
+        hh >> height;
 		
-				auto size = Director::getInstance()->getVisibleSize();
+        auto size = Director::getInstance()->getVisibleSize();
 				
-				node.runAction(Sequence::create(
-					MoveBy::create(dura, Point(size.width * width / 100, size.height * height / 100)),
+        node.runAction(Sequence::create(
+            MoveBy::create(dura, Point(size.width * width / 100, size.height * height / 100)),
 					CallFuncN::create(CC_CALLBACK_1(ItemFactory::scale, this)),NULL));
 			
-		} else if (type == 5)
-	  {
-		    std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
+    } else if (type == 5)
+    {
+        std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
 		
-		    auto array = PointArray::create(20);
-		    for (std::string sub : vec)
-		    {
-		        array->addControlPoint(getPoint(sub));
-		    }
+        auto array = PointArray::create(20);
+        for (std::string sub : vec)
+        {
+            array->addControlPoint(getPoint(sub));
+        }
 		    
-		    auto action = CardinalSplineBy::create(dura, array, 0);
-		    auto reverse = action->reverse();
+        auto action = CardinalSplineBy::create(dura, array, 0);
+        auto reverse = action->reverse();
 		    
-		    auto seq = Sequence::create(action, reverse, NULL);
-		    node.runAction(seq);
-	  }else if (type == 6)
-		{
-				std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
-				std::string temp = vec[0].c_str();
-				unsigned long index = temp.find_first_of(",");
+        auto seq = Sequence::create(action, reverse, NULL);
+        node.runAction(seq);
+    }else if (type == 6)
+    {
+        std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
+        std::string temp = vec[0].c_str();
+        unsigned long index = temp.find_first_of(",");
 				
-				int w = str2num(temp.substr(0, index));
-				int h = str2num(temp.substr(index + 1, temp.length()));
+        int w = str2num(temp.substr(0, index));
+        int h = str2num(temp.substr(index + 1, temp.length()));
 				
-				auto action = JumpBy::create(dura, Point(w, h), str2num(vec[1].c_str()), str2num(vec[2].c_str()));
-				node.runAction(action);
-		}
+        auto action = JumpBy::create(dura, Point(w, h), str2num(vec[1].c_str()), str2num(vec[2].c_str()));
+        node.runAction(action);
+    }else if (type == 8)
+    {
+        std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
+        std::string temp = vec[1].c_str();
+        
+        unsigned long index = temp.find_first_of(",");
+        
+        int w = str2num(temp.substr(0, index));
+        int h = str2num(temp.substr(index + 1, temp.length()));
+        
+        auto size = Director::getInstance()->getVisibleSize();
+        
+        auto stay = MoveBy::create(str2num(vec[0].c_str()), Point(0, 0));
+        auto move = MoveBy::create(dura, Point(size.width * w/100, size.height * h/100));
+       
+        auto seq = Sequence::create(stay, move, NULL);
+        node.runAction(seq);
+    }
+
 }
     
 void ItemFactory::scale(Node* node)
