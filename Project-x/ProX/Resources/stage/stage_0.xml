@@ -22,15 +22,12 @@
             <action type="5" dura="1.5" para="0,0:60,0:60,30:20,30:0,0"></action>
         </item>
         <item tag="1" color="7" width="50" height="50" position="20,0">
-<<<<<<< HEAD
-            <!-- action 6 跳跃，dura 时间 para 0,0是跳跃的终点， 80是跳跃高度， 5跳跃次数-->
+            <!-- action 6 跳跃，0,0:80:5  0,0是跳跃的终点， 80是跳跃高度， 5跳跃次数-->
             <action type="6" dura="3" para="0,0:80:5"></action>
-=======
-            <!--<action type="5" dura="1.5" para="0,0:60,0:60,30:20,30:0,0"></action>-->
-            <!-- type=6是跳跃，0,0:80:5  0,0是跳跃的终点， 80是跳跃高度， 5跳跃次数
-            <action type="6" dura="3" para="0,0:80:5"></action>-->
-            <action type="8" dura="3" para="2:40,0"></action>
->>>>>>> 3c9e6c19f63276c0433ec7f903258a3fae260be8
+        </item>
+        <item tag="1" color="7" width="50" height="50" position="50,0">
+        	<!-- action 8 过n秒后移动，dura移动的时间 para="2:40,0" 2:暂停时间 40,0移动距离-->
+        	<action type="8" dura="3" para="2:40,0"></action>
         </item>
      </items>
 </stage>

@@ -139,6 +139,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClCompile Include="..\Classes\GameScene.cpp" />
     <ClCompile Include="..\Classes\ItemFactory.cpp" />
     <ClCompile Include="..\Classes\pugixml.cpp" />
+    <ClCompile Include="..\Classes\Tools.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@ xcopy /Y /Q "$(EngineRoot)external\websockets\prebuilt\win32\*.*" "$(OutDir)"</C
     <ClInclude Include="..\Classes\pugiconfig.hpp" />
     <ClInclude Include="..\Classes\pugixml.hpp" />
     <ClInclude Include="..\Classes\resource.h" />
+    <ClInclude Include="..\Classes\Tools.h" />
     <ClInclude Include="main.h" />
   </ItemGroup>
   <ItemGroup>
