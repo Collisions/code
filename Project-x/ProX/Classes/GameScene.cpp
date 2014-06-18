@@ -140,6 +140,11 @@ void GameScene::update(float f)
     auto actionManager = Director::getInstance()->getActionManager();
     auto itemsVec = ItemFactory::getInstance()->itemArr;
     
+    if (box->getPositionY() <= 151)
+    {
+        clickCount = 0;
+    }
+    
     for (auto item: itemsVec)
     {
         if(item->getBoundingBox().intersectsRect(box->getBoundingBox()))
@@ -180,19 +185,18 @@ void GameScene::update(float f)
 
 void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 {
-    if(clickCount < 2)
+    if(clickCount < 1)
     {
+        log("===============%d", clickCount);
         clickCount++;
-        auto action = Sequence::create(JumpBy::create(0.5f, Point(0, 0), jump_height, 1),
-            CallFuncN::create(CC_CALLBACK_1(GameScene::ACallback, this)), NULL);
+        auto action = JumpBy::create(0.5f, Point(0, 0), jump_height, 1);
         box->runAction(action);
     }
 }
 
 void GameScene::ACallback(Node* sender)
 {
-    log("---------->>>>");
-    clickCount = 0;
+    
 }
 
 void GameScene::menuStartCallback(Ref* pSender)
