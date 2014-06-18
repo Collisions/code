@@ -187,7 +187,6 @@ void GameScene::onTouchesBegan(const vector<Touch*>& touches, Event* event)
 {
     if(clickCount < 1)
     {
-        log("===============%d", clickCount);
         clickCount++;
         auto action = JumpBy::create(0.5f, Point(0, 0), jump_height, 1);
         box->runAction(action);

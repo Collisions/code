@@ -3,8 +3,9 @@
     <items>
         <item tag="1" color="7" width="50" height="50" position="20,0">
             <!--<action type="5" dura="1.5" para="0,0:60,0:60,30:20,30:0,0"></action>-->
-            <!-- type=6是跳跃，0,0:80:5  0,0是跳跃的终点， 80是跳跃高度， 5跳跃次数-->
-            <action type="6" dura="3" para="0,0:80:5"></action>
+            <!-- type=6是跳跃，0,0:80:5  0,0是跳跃的终点， 80是跳跃高度， 5跳跃次数
+            <action type="6" dura="3" para="0,0:80:5"></action>-->
+            <action type="8" dura="3" para="2:40,0"></action>
         </item>
     </items>
 </stage>
