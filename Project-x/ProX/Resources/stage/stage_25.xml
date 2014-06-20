@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <stage gColor="1" bgColor="9" boxColor="10">
     <items>
-    	<item tag="1" color="7" width="50" height="90" position="25,0">
+    	<item tag="1" color="7" width="50" height="100" position="25,20">
+    		<action type="2" dura="0.5" para="1,0.5"></action>
       </item>
-      <item tag="2" color="7" width="100" height="50" position="55,0">
-        	<action type="1" dura="0.5" para="-10,0"></action>
+      <item tag="2" color="7" width="50" height="150" position="25,-10">
+        	<action type="2" dura="0.5" para="1,0.5"></action>
       </item>
-      <item tag="3" color="7" width="100" height="50" position="75,0">
-        	<action type="1" dura="0.5" para="10,4"></action>
+      <item tag="3" color="7" width="200" height="50" position="50,23">
+        	<action type="2" dura="0.5" para="2,1.5"></action>
+      </item>
+      <item tag="3" color="7" width="50" height="50" position="35,0">
+        	<action type="1" dura="1" para="20,0"></action>
+      </item>
+      <item tag="3" color="7" width="50" height="50" position="90,0">
+        	<action type="1" dura="1" para="-20,0"></action>
       </item>
     </items>
 </stage>
