@@ -32,6 +32,8 @@ public:
     
     void createAction(Node &node, int type, float dura, const std::string &para);
 
+    Action* createBgAction(int type);
+    
 	void scale(Node* node);
     
     Point getPoint(const std::string &str);

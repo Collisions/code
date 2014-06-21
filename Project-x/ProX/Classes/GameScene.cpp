@@ -44,7 +44,7 @@ void GameScene::initUI()
 {
     auto size = Director::getInstance()->getVisibleSize();
     
-    auto node = Node::create();
+    auto node = NodeGrid::create();
     node->setTag(NODE);
     this->addChild(node);
     

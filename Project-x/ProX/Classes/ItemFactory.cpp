@@ -66,6 +66,11 @@ void ItemFactory::createStage(Node &parent, const std::string &filename)
     SET_COLOR(bg, root.attribute("bgColor").as_string());
     SET_COLOR(ground, root.attribute("gColor").as_string());
     SET_COLOR(player, root.attribute("boxColor").as_string());
+    auto action = createBgAction(str2num(root.attribute("type").as_string()));
+    if (action != nullptr)
+    {
+        parent.runAction(action);
+    }
     
     pugi::xml_node items = root.child("items");
     
@@ -142,6 +147,16 @@ void ItemFactory::setPositionByStr(Node &node, const std::string &pos)
     node.setPosition(Point(size.width * width/100, size.height * height/100 + 150));
     
 }
+
+Action* ItemFactory::createBgAction(int type)
+{
+    switch (type)
+    {
+        case 1: return Shaky3D::create(10, Size(15,10), 5, false);
+        default: return nullptr;
+    }
+}
+
 
 void ItemFactory::createAction(Node &node, int type, float dura, const std::string &para)
 {
