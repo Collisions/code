@@ -149,18 +149,11 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
     if(type == 1)
     {
         unsigned long index = para.find_first_of(",");
-        
-        std::string www = para.substr(0, index);
-        std::string hhh = para.substr(index + 1, para.length());
-        
-        int width,height;
-        std::stringstream ww(www);
-        ww>>width;
-        std::stringstream hh(hhh);
-        hh>>height;
-
+      
+        float width = str2num(para.substr(0, index));
+        float height = str2num(para.substr(index + 1, para.length()));
+		
         auto size = Director::getInstance()->getVisibleSize();
-
         auto move = MoveBy::create(dura, Point(size.width * width/100, size.height * height/100));
         auto move_back = move->reverse();
         auto seq = Sequence::create(move, move_back, NULL);
@@ -169,16 +162,10 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
     } else if (type == 2)
     {
         unsigned long index = para.find_first_of(",");
-        
-        std::string www = para.substr(0, index);
-        std::string hhh = para.substr(index + 1, para.length());
-        
-        float width,height;
-        std::stringstream ww(www);
-        ww>>width;
-        std::stringstream hh(hhh);
-        hh>>height;
-
+    
+        float width = str2num(para.substr(0, index));
+        float height = str2num(para.substr(index + 1, para.length()));
+		
         auto actionBy = ScaleBy::create(dura, width, height);
         auto seq = Sequence::create(actionBy, actionBy->reverse(), NULL);
         auto rep = RepeatForever::create(seq);
@@ -192,18 +179,10 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
     } else if (type == 4)
     {
         unsigned long index = para.find_first_of(",");
-		
-        std::string www = para.substr(0, index);
-        std::string hhh = para.substr(index + 1, para.length());
-		
-        float width, height;
-        std::stringstream ww(www);
-        ww >> width;
-        std::stringstream hh(hhh);
-        hh >> height;
+        float width = str2num(para.substr(0, index));
+        float height = str2num(para.substr(index + 1, para.length()));
 		
         auto size = Director::getInstance()->getVisibleSize();
-				
         node.runAction(Sequence::create(
             MoveBy::create(dura, Point(size.width * width / 100, size.height * height / 100)),
 					CallFuncN::create(CC_CALLBACK_1(ItemFactory::scale, this)),NULL));
@@ -251,6 +230,22 @@ void ItemFactory::createAction(Node &node, int type, float dura, const std::stri
        
         auto seq = Sequence::create(stay, move, NULL);
         node.runAction(seq);
+    } else if (type ==9 )
+    {
+        std::vector<std::string> vec = Tools::getInstance()->splitStr(para, ":");
+        std::string temp = vec[2].c_str();
+        
+        unsigned long index = temp.find_first_of(",");
+        
+        int w = str2num(temp.substr(0, index));
+        int h = str2num(temp.substr(index + 1, temp.length()));
+        
+        auto size = Director::getInstance()->getVisibleSize();
+     
+        auto move = MoveBy::create(dura, Point(size.width * w/100, size.height * h/100));
+        auto seq = Sequence::create(move, move->reverse(), move, move->reverse(), NULL);
+        auto action = Spawn::create(seq,Blink::create(str2num(vec[0].c_str()), str2num(vec[1].c_str())),NULL);
+        node.runAction(action);
     }
 
 }
