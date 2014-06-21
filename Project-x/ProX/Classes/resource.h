@@ -8,7 +8,7 @@
 
 #ifndef PX_resource_h
 #define PX_resource_h
-
+#define NODE 1000
 #define PLAYER 999
 #define BG 100
 #define GROUND 101

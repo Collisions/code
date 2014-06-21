@@ -42,24 +42,27 @@ bool GameScene::init()
 
 void GameScene::initUI()
 {
-    
     auto size = Director::getInstance()->getVisibleSize();
+    
+    auto node = Node::create();
+    node->setTag(NODE);
+    this->addChild(node);
     
     //Init background.
     auto bg = LayerColor::create(Color4B::WHITE, size.width, size.height);
-    this->addChild(bg);
+    node->addChild(bg);
     bg->setTag(BG);
     
     //Init ground.
     auto ground = LayerColor::create(Color4B::BLACK, size.width, 150);
-    this->addChild(ground);
+    node->addChild(ground);
     ground->setTag(GROUND);
     
     //Init logo.
     auto logo = Sprite::create("CloseNormal.png");
     logo->setPosition(Point(size.width/2, size.height/3*2));
     logo->setTag(LOGO);
-    this->addChild(logo);
+    node->addChild(logo);
     
     //Init pause button.
     auto pauseItem = MenuItemImage::create(
@@ -70,7 +73,7 @@ void GameScene::initUI()
 	pauseItem->setPosition(Point(size.width - 50, size.height - 50));
 	auto pauseMenu = Menu::create(pauseItem, NULL);
 	pauseMenu->setPosition(Point::ZERO);
-	this->addChild(pauseMenu);
+	node->addChild(pauseMenu);
     pauseMenu->setTag(PAUSE);
     
     //Init start button and tips.
@@ -82,7 +85,7 @@ void GameScene::initUI()
 	startItem->setPosition(Point(size.width/2, size.height/2));
 	auto startMenu = Menu::create(startItem, NULL);
 	startMenu->setPosition(Point::ZERO);
-	this->addChild(startMenu);
+	node->addChild(startMenu);
     startMenu->setTag(START);
     
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
@@ -96,25 +99,26 @@ void GameScene::initUI()
     auto tipsSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
-    this->addChild(tips);
+    node->addChild(tips);
 
     auto score = LabelTTF::create("Score:0", "Arial", 24);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
     score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 112));
-    this->addChild(score);
+    node->addChild(score);
     score->setTag(SCORE);
     
     box = LayerColor::create(Color4B::RED, 50, 50);
     box->setPosition(Point(0, 150));
-    this->addChild(box);
+    node->addChild(box);
     box->setTag(PLAYER);
 }
 
 void GameScene::updateScore()
 {
-    auto score = (LabelTTF*)(this->getChildByTag(SCORE));
+    auto node = this->getChildByTag(NODE);
+    auto score = (LabelTTF*)(node->getChildByTag(SCORE));
     ostringstream oss;
     oss << "Score:" << (stageCount-1);
     score->setString(oss.str());
@@ -126,12 +130,13 @@ void GameScene::nextStage()
 	ostringstream oss;
 	oss << "stage_" << stageCount << ".xml";
 	string stage = oss.str();
-	drawStage(temp);
+	drawStage(stage);
 }
 
 void GameScene::drawStage(const std::string &filename)
 {
-     ItemFactory::getInstance()->createStage(*this, filename);
+    auto node = this->getChildByTag(NODE);
+    ItemFactory::getInstance()->createStage(*node, filename);
 }
 
 void GameScene::update(float f)
@@ -149,6 +154,7 @@ void GameScene::update(float f)
     {
         if(item->getBoundingBox().intersectsRect(box->getBoundingBox()))
         {
+            auto node = this->getChildByTag(NODE);
             actionManager->removeAllActions();
             auto dispatcher = Director::getInstance()->getEventDispatcher();
             dispatcher->removeAllEventListeners();
@@ -162,7 +168,7 @@ void GameScene::update(float f)
             startItem->setPosition(Point(size.width/2, size.height/2));
             auto startMenu = Menu::create(startItem, NULL);
             startMenu->setPosition(Point::ZERO);
-            this->addChild(startMenu);
+            node->addChild(startMenu);
 			stageCount = 1;
             startMenu->setTag(START);
             return;
@@ -200,11 +206,12 @@ void GameScene::ACallback(Node* sender)
 
 void GameScene::menuStartCallback(Ref* pSender)
 {
+    auto node = this->getChildByTag(NODE);
     clickCount = 0;
     drawStage(temp);
-    auto logo = getChildByTag(LOGO);
+    auto logo = node->getChildByTag(LOGO);
     if(logo)logo->removeFromParent();
-    auto startMenu = getChildByTag(START);
+    auto startMenu = node->getChildByTag(START);
     startMenu->removeFromParent();
     
     auto dispatcher = Director::getInstance()->getEventDispatcher();
