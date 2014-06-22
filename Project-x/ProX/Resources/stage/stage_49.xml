@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stage gColor="1" bgColor="9" boxColor="10">
+    <items>
+    	<item tag="1" color="7" width="50" height="90" position="28,0">
+    		<action type="3" dura="0.5"></action>
+      </item>
+      <item tag="3" color="7" width="50" height="50" position="50,0">
+    		<action type="9" dura="0.8" para="5:5:15,0"></action>
+      </item>
+      <item tag="3" color="7" width="50" height="50" position="90,0">
+    		<action type="8" dura="0.5" para="1.6:-20,0"></action>
+      </item>
+    </items>
+</stage>
