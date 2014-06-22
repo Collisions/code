@@ -30,6 +30,7 @@
         	<action type="8" dura="3" para="2:40,0"></action>
         </item>
         <item tag="1" color="7" width="50" height="50" position="50,0">
+        	<!-- action 9 移动加渐隐，dura移动的时间 para="10:20,40,0" 10:渐隐10秒钟 20:10秒钟20次40,0移动的距离 -->
         	<action type="9" dura="3" para="10:20:40,0"></action>
         </item>
      </items>

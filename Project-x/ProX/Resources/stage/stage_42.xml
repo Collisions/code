@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <stage gColor="1" bgColor="9" boxColor="10">
     <items>
-    	<item tag="1" color="7" width="50" height="50" position="15,0">
-    		<action type="6" dura="3.5" para="300,0:100:3"></action>
+    	<item tag="1" color="7" width="70" height="70" position="25,0">
+    		<action type="9" dura="1" para="2:5:-10,0"></action>
       </item>
-      <item tag="1" color="7" width="50" height="50" position="90,0">
-    		<action type="6" dura="1" para="-500,0:50:3"></action>
+      <item tag="2" color="7" width="50" height="50" position="55,0">
       </item>
-      <item tag="1" color="7" width="50" height="50" position="80,-5">
-    		<action type="1" dura="0.2" para="0,5"></action>
+      <item tag="1" color="7" width="50" height="50" position="55,5">
+    		<action type="8" dura="0.2" para="0.8:-10,15"></action>
       </item>
-      <item tag="1" color="7" width="50" height="50" position="85,0">
-    		<action type="6" dura="3.5" para="-300,0:100:3"></action>
+      <item tag="1" color="7" width="70" height="70" position="90,0">
+    		<action type="9" dura="1" para="5:5:-10,0"></action>
       </item>
     </items>
 </stage>
