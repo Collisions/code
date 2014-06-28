@@ -40,11 +40,9 @@ public:
 
 
 
-<<<<<<< HEAD
-	string temp = "stage_51.xml";
-=======
-	string temp = "stage_1.xml";
->>>>>>> 5f8477b050fa07ac607b659f9c212eedffbaea0a
+
+	string temp = "stage_61.xml";
+
 
 
     void ACallback(Node* sender);

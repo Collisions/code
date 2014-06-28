@@ -134,6 +134,10 @@ Color3B ItemFactory::getColor(int color)
 			return Color3B::YGREEN;
 		case 19:
 			return Color3B::YRED;
+		case 20:
+			return Color3B::ZBLUE;
+		case 21:
+			return Color3B::ZRED;
         default:
             return Color3B::WHITE;
     }
