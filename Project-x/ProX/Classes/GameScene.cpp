@@ -88,9 +88,9 @@ void GameScene::initUI()
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
     LabelTTF* tips;
     if (lan == LanguageType::CHINESE) {
-        tips = LabelTTF::create("dfsdfsdfsdfds", "Arial", 24);
+        tips = LabelTTF::create("dfsdfsdfsdfds", "Arial", 27);
     } else {
-        tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 24);
+        tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 27);
     }
     
     auto tipsSize = tips->cocos2d::Node::getContentSize();
@@ -98,7 +98,7 @@ void GameScene::initUI()
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
     node->addChild(tips);
 
-    auto score = LabelTTF::create("SCORE : 0", "Arial", 24);
+    auto score = LabelTTF::create("SCORE : 0", "Arial", 27);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
@@ -166,7 +166,7 @@ void GameScene::update(float f)
                 oss << "NEW BEST : " << (stageCount - 1);
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 24);
+                auto score = LabelTTF::create(best, "Arial", 27);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
@@ -182,7 +182,7 @@ void GameScene::update(float f)
                 oss << "BEST : " << bScore;
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 24);
+                auto score = LabelTTF::create(best, "Arial", 27);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
