@@ -64,11 +64,20 @@ struct Color3B
     GLubyte b;
     
     const static Color3B WHITE;
-    const static Color3B YELLOW;
+    const static Color3B BYELLOW;
+	const static Color3B DYELLOW;
+	const static Color3B WYELLOW;
     const static Color3B BLUE;
-	const static Color3B RBLUE;
-    const static Color3B GREEN;
-    const static Color3B RED;
+	const static Color3B BBLUE;
+	const static Color3B GBLUE;
+	const static Color3B HBLUE;
+	const static Color3B WBLUE;
+    const static Color3B BGREEN;
+	const static Color3B YGREEN;
+    const static Color3B GRED;
+	const static Color3B DRED;
+	const static Color3B HRED;
+	const static Color3B YRED;
     const static Color3B MAGENTA;
     const static Color3B BLACK;
     const static Color3B ORANGE;

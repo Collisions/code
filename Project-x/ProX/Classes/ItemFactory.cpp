@@ -99,15 +99,15 @@ Color3B ItemFactory::getColor(int color)
         case 1:
             return Color3B::BLACK;
         case 2:
-            return Color3B::RED;
+            return Color3B::GRED;
         case 3:
-            return Color3B::YELLOW;
+            return Color3B::BYELLOW;
         case 4:
             return Color3B::ORANGE;
         case 5:
             return Color3B::MAGENTA;
         case 6:
-            return Color3B::GREEN;
+            return Color3B::BGREEN;
         case 7:
             return Color3B::GRAY;
         case 8:
@@ -115,7 +115,25 @@ Color3B ItemFactory::getColor(int color)
         case 9:
             return Color3B::WHITE;
 		case 10:
-			return Color3B::RBLUE;
+			return Color3B::BBLUE;
+		case 11:
+			return Color3B::GBLUE;
+		case 12:
+			return Color3B::DYELLOW;
+		case 13:
+			return Color3B::DRED;
+		case 14:
+			return Color3B::HRED;
+		case 15:
+			return Color3B::HBLUE;
+		case 16:
+			return Color3B::WBLUE;
+		case 17:
+			return Color3B::WYELLOW;
+		case 18:
+			return Color3B::YGREEN;
+		case 19:
+			return Color3B::YRED;
         default:
             return Color3B::WHITE;
     }

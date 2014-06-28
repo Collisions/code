@@ -219,11 +219,20 @@ bool Color4F::operator!=(const Color4B& right) const
  */
 
 const Color3B Color3B::WHITE  (255, 255, 255);
-const Color3B Color3B::YELLOW (255, 255,   0);
-const Color3B Color3B::GREEN  (  0, 255,   0);
+const Color3B Color3B::BYELLOW (255, 255,   0);
+const Color3B Color3B::DYELLOW(255, 245, 0);
+const Color3B Color3B::WYELLOW(232, 202, 26);
+const Color3B Color3B::BGREEN  (  0, 146,   63);
+const Color3B Color3B::YGREEN(0, 166, 84);
 const Color3B Color3B::BLUE   (  0,   0, 255);
-const Color3B Color3B::RBLUE  ( 65, 105, 225);
-const Color3B Color3B::RED    (255,   0,   0);
+const Color3B Color3B::HBLUE(23, 33, 118);
+const Color3B Color3B::BBLUE  ( 40, 22, 111);
+const Color3B Color3B::GBLUE(0, 42, 126);
+const Color3B Color3B::WBLUE(46, 68, 143);
+const Color3B Color3B::GRED    (206,   17,   39);
+const Color3B Color3B::DRED(218, 37, 28);
+const Color3B Color3B::HRED(231, 0, 18);
+const Color3B Color3B::YRED(238, 27, 36);
 const Color3B Color3B::MAGENTA(255,   0, 255);
 const Color3B Color3B::BLACK  (  0,   0,   0);
 const Color3B Color3B::ORANGE (255, 127,   0);

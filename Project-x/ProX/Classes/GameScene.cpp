@@ -130,7 +130,7 @@ void GameScene::nextStage()
 	ostringstream oss;
 	oss << "stage_" << stageCount << ".xml";
 	string stage = oss.str();
-	drawStage(stage);
+	drawStage(temp);
 }
 
 void GameScene::drawStage(const std::string &filename)

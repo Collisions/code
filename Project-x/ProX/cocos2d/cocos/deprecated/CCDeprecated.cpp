@@ -37,10 +37,10 @@ const Rect CCRectZero = Rect::ZERO;
 
 
 const Color3B ccWHITE = Color3B::WHITE;
-const Color3B ccYELLOW = Color3B::YELLOW;
-const Color3B ccGREEN = Color3B::GREEN;
+const Color3B ccYELLOW = Color3B::BYELLOW;
+const Color3B ccGREEN = Color3B::BGREEN;
 const Color3B ccBLUE = Color3B::BLUE;
-const Color3B ccRED = Color3B::RED;
+const Color3B ccRED = Color3B::DRED;
 const Color3B ccMAGENTA = Color3B::MAGENTA;
 const Color3B ccBLACK = Color3B::BLACK;
 const Color3B ccORANGE = Color3B::ORANGE;

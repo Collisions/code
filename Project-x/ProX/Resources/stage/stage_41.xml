@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stage gColor="1" bgColor="9" boxColor="10">
+<stage gColor="16" bgColor="0" boxColor="17">
     <items>
     	<item tag="1" color="7" width="50" height="50" position="15,0">
     		<action type="9" dura="0.5" para="4:5:20,0"></action>

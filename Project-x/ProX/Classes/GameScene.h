@@ -40,7 +40,7 @@ public:
 
 
 
-	string temp = "stage_57.xml";
+	string temp = "stage_51.xml";
 
 
     void ACallback(Node* sender);
