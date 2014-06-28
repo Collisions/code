@@ -242,8 +242,11 @@ const Color3B Color3B::GRAY   (166, 166, 166);
 
 const Color4B Color4B::WHITE  (255, 255, 255, 255);
 const Color4B Color4B::YELLOW (255, 255,   0, 255);
+const Color4B Color4B::BYELLOW (255, 255,   0, 255);
 const Color4B Color4B::GREEN  (  0, 255,   0, 255);
+const Color4B Color4B::BGREEN  (  0, 146,   63, 255);
 const Color4B Color4B::BLUE   (  0,   0, 255, 255);
+const Color4B Color4B::BBLUE  ( 40, 22, 111, 255);
 const Color4B Color4B::RED    (255,   0,   0, 255);
 const Color4B Color4B::MAGENTA(255,   0, 255, 255);
 const Color4B Color4B::BLACK  (  0,   0,   0, 255);

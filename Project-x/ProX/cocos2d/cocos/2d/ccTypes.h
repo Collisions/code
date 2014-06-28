@@ -110,8 +110,11 @@ struct Color4B
 
     const static Color4B WHITE;
     const static Color4B YELLOW;
+    const static Color4B BYELLOW;
     const static Color4B BLUE;
+    const static Color4B BBLUE;
     const static Color4B GREEN;
+    const static Color4B BGREEN;
     const static Color4B RED;
     const static Color4B MAGENTA;
     const static Color4B BLACK;

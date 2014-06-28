@@ -38,12 +38,16 @@ public:
     
     int stageCount;
 
+<<<<<<< HEAD
 
 
 
 	string temp = "stage_61.xml";
 
 
+=======
+	string temp = "stage_1.xml";
+>>>>>>> 7202e0d1ea257d8f092ed44ec0261099cc25a3c8
 
     void ACallback(Node* sender);
     
