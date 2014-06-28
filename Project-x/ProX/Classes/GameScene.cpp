@@ -10,6 +10,7 @@
 #include "resource.h"
 #include "pugixml.hpp"
 #include "ItemFactory.h"
+#include "Tools.h"
 
 USING_NS_CC;
 
@@ -58,33 +59,29 @@ void GameScene::initUI()
     node->addChild(ground);
     ground->setTag(GROUND);
     
-    //Init logo.
-    auto logo = Sprite::create("CloseNormal.png");
-    logo->setPosition(Point(size.width/2, size.height/3*2));
-    logo->setTag(LOGO);
-    node->addChild(logo);
-    
     //Init pause button.
-    auto pauseItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseNormal.png",
-                                           CC_CALLBACK_1(GameScene::menuPauseCallback, this));
-    
-	pauseItem->setPosition(Point(size.width - 50, size.height - 50));
-	auto pauseMenu = Menu::create(pauseItem, NULL);
-	pauseMenu->setPosition(Point::ZERO);
-	node->addChild(pauseMenu);
-    pauseMenu->setTag(PAUSE);
+//    auto pauseItem = MenuItemImage::create(
+//                                           "pause.jpg",
+//                                           "pause.jpg",
+//                                           CC_CALLBACK_1(GameScene::menuPauseCallback, this));
+//    
+//	pauseItem->setPosition(Point(size.width - 50, size.height - 50));
+//	auto pauseMenu = Menu::create(pauseItem, NULL);
+//	pauseMenu->setPosition(Point::ZERO);
+//    pauseMenu->setScale(0.5);
+//	node->addChild(pauseMenu);
+//    pauseMenu->setTag(PAUSE);
     
     //Init start button and tips.
     auto startItem = MenuItemImage::create(
-                                           "CloseNormal.png",
-                                           "CloseNormal.png",
+                                           "start.jpg",
+                                           "start.jpg",
                                            CC_CALLBACK_1(GameScene::menuStartCallback, this));
     
 	startItem->setPosition(Point(size.width/2, size.height/2));
 	auto startMenu = Menu::create(startItem, NULL);
 	startMenu->setPosition(Point::ZERO);
+    startMenu->setScale(0.5);
 	node->addChild(startMenu);
     startMenu->setTag(START);
     
@@ -101,7 +98,7 @@ void GameScene::initUI()
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
     node->addChild(tips);
 
-    auto score = LabelTTF::create("Score:0", "Arial", 24);
+    auto score = LabelTTF::create("SCORE : 0", "Arial", 24);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
@@ -120,7 +117,7 @@ void GameScene::updateScore()
     auto node = this->getChildByTag(NODE);
     auto score = (LabelTTF*)(node->getChildByTag(SCORE));
     ostringstream oss;
-    oss << "Score:" << (stageCount-1);
+    oss << "SCORE : " << (stageCount-1);
     score->setString(oss.str());
 }
 
@@ -160,14 +157,50 @@ void GameScene::update(float f)
             dispatcher->removeAllEventListeners();
             unscheduleUpdate();
             
+            int bScore = Tools::getInstance()->getBestScore();
+            if (stageCount - 1 > bScore)
+            {
+                Tools::getInstance()->setBestScore(stageCount - 1);
+                
+                ostringstream oss;
+                oss << "NEW BEST : " << (stageCount - 1);
+                string best = oss.str();
+                
+                auto score = LabelTTF::create(best, "Arial", 24);
+                score->setColor(Color3B::BLACK);
+                auto scoreSize = score->cocos2d::Node::getContentSize();
+                // position the label on the center of the screen
+                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 160));
+                node->addChild(score);
+                score->setTag(BEST);
+                
+                auto c_score = (LabelTTF*)(node->getChildByTag(SCORE));
+                c_score->setVisible(false);
+
+            } else {
+                ostringstream oss;
+                oss << "BEST : " << bScore;
+                string best = oss.str();
+                
+                auto score = LabelTTF::create(best, "Arial", 24);
+                score->setColor(Color3B::BLACK);
+                auto scoreSize = score->cocos2d::Node::getContentSize();
+                // position the label on the center of the screen
+                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 160));
+                node->addChild(score);
+                score->setTag(BEST);
+
+            }
+            
             auto startItem = MenuItemImage::create(
-                                                   "CloseNormal.png",
-                                                   "CloseNormal.png",
+                                                   "restart.jpg",
+                                                   "restart.jpg",
                                                    CC_CALLBACK_1(GameScene::menuStartCallback, this));
             
             startItem->setPosition(Point(size.width/2, size.height/2));
             auto startMenu = Menu::create(startItem, NULL);
             startMenu->setPosition(Point::ZERO);
+            startMenu->setScale(0.5);
             node->addChild(startMenu);
 			stageCount = 1;
             startMenu->setTag(START);
@@ -209,8 +242,6 @@ void GameScene::menuStartCallback(Ref* pSender)
     auto node = this->getChildByTag(NODE);
     clickCount = 0;
     drawStage(temp);
-    auto logo = node->getChildByTag(LOGO);
-    if(logo)logo->removeFromParent();
     auto startMenu = node->getChildByTag(START);
     startMenu->removeFromParent();
     
@@ -218,6 +249,11 @@ void GameScene::menuStartCallback(Ref* pSender)
     auto listener = EventListenerTouchAllAtOnce::create();
     listener->onTouchesBegan = CC_CALLBACK_2(GameScene::onTouchesBegan, this);
     dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
+    
+    auto b_score = (LabelTTF*)(node->getChildByTag(BEST));
+    if (b_score) b_score->removeFromParent();
+    auto c_score = (LabelTTF*)(node->getChildByTag(SCORE));
+    c_score->setVisible(true);
     
     auto size = Director::getInstance()->getVisibleSize();
     box->setPosition(0, 150);
@@ -229,7 +265,6 @@ void GameScene::menuStartCallback(Ref* pSender)
 void GameScene::menuPauseCallback(Ref* pSender)
 {
     Director::getInstance()->getActionManager()->pauseAllRunningActions();
-    Director::getInstance()->getActionManager()->removeAllActionsFromTarget(this);
 }
 
 

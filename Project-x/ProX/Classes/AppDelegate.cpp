@@ -27,6 +27,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     director->setAnimationInterval(1.0 / 60);
     
     FileUtils::getInstance()->addSearchPath("stage");
+    FileUtils::getInstance()->addSearchPath("icon");
 
     // create a scene. it's an autorelease object
     auto scene = GameScene::createScene();
@@ -41,6 +42,8 @@ bool AppDelegate::applicationDidFinishLaunching() {
 void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
+    
+    Director::getInstance()->getActionManager()->pauseAllRunningActions();
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -49,6 +52,9 @@ void AppDelegate::applicationDidEnterBackground() {
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
+    auto scene = Director::getInstance()->getRunningScene();
+    
+    Director::getInstance()->getActionManager()->resumeTarget(scene);
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
