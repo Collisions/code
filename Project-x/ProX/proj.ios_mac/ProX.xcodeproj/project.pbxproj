@@ -74,6 +74,7 @@
 		9D106BF4193E01E900A3A67A /* pugixml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF2193E01E900A3A67A /* pugixml.cpp */; };
 		9D106BFA193E07B700A3A67A /* GameScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106BF6193E07B700A3A67A /* GameScene.cpp */; };
 		9D106C19193F440000A3A67A /* ItemFactory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9D106C17193F440000A3A67A /* ItemFactory.cpp */; };
+		9DA875F7195EA99700191E4C /* data in Resources */ = {isa = PBXBuildFile; fileRef = 9DA875F6195EA99700191E4C /* data */; };
 		9DAED16A19507DA900FE5F3D /* Tools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9DAED16819507DA900FE5F3D /* Tools.cpp */; };
 		9DAED16E195E8BC500FE5F3D /* icon in Resources */ = {isa = PBXBuildFile; fileRef = 9DAED16D195E8BC500FE5F3D /* icon */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
@@ -303,6 +304,7 @@
 		9D106BF8193E07B700A3A67A /* resource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = resource.h; path = ../Classes/resource.h; sourceTree = "<group>"; };
 		9D106C17193F440000A3A67A /* ItemFactory.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ItemFactory.cpp; path = ../Classes/ItemFactory.cpp; sourceTree = "<group>"; };
 		9D106C18193F440000A3A67A /* ItemFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ItemFactory.h; path = ../Classes/ItemFactory.h; sourceTree = "<group>"; };
+		9DA875F6195EA99700191E4C /* data */ = {isa = PBXFileReference; lastKnownFileType = folder; path = data; sourceTree = "<group>"; };
 		9DAED16819507DA900FE5F3D /* Tools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tools.cpp; path = ../Classes/Tools.cpp; sourceTree = "<group>"; };
 		9DAED16919507DA900FE5F3D /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Tools.h; path = ../Classes/Tools.h; sourceTree = "<group>"; };
 		9DAED16D195E8BC500FE5F3D /* icon */ = {isa = PBXFileReference; lastKnownFileType = folder; path = icon; sourceTree = "<group>"; };
@@ -540,6 +542,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9DA875F6195EA99700191E4C /* data */,
 				9DAED16D195E8BC500FE5F3D /* icon */,
 				9D0510D8194B2F0000CE7AD4 /* stage */,
 				1AFAF8B916D35E4900DB1158 /* CloseNormal.png */,
@@ -728,6 +731,7 @@
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				50EF62A317ECD613001EB2F8 /* Icon-50.png in Resources */,
 				5087E78017EB970100C73F5D /* Icon-114.png in Resources */,
+				9DA875F7195EA99700191E4C /* data in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 				50EF62A217ECD613001EB2F8 /* Icon-29.png in Resources */,
 				50EF629617ECD46A001EB2F8 /* Icon-40.png in Resources */,

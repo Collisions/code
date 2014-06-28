@@ -52,3 +52,10 @@ void Tools::setBestScore(int score)
     UserDefault::getInstance()->setIntegerForKey("SCORE", score);
 }
 
+std::string Tools::getWordByKey(int key)
+{
+    
+    return "";
+}
+
+
