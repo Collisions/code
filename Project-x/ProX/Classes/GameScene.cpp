@@ -50,12 +50,12 @@ void GameScene::initUI()
     this->addChild(node);
     
     //Init background.
-    auto bg = LayerColor::create(Color4B::WHITE, size.width, size.height);
+    auto bg = LayerColor::create(Color4B::BGREEN, size.width, size.height);
     node->addChild(bg);
     bg->setTag(BG);
     
     //Init ground.
-    auto ground = LayerColor::create(Color4B::BLACK, size.width, 150);
+    auto ground = LayerColor::create(Color4B::BYELLOW, size.width, 150);
     node->addChild(ground);
     ground->setTag(GROUND);
     
@@ -74,39 +74,40 @@ void GameScene::initUI()
     
     //Init start button and tips.
     auto startItem = MenuItemImage::create(
-                                           "start.jpg",
-                                           "start.jpg",
+                                           "start1.png",
+                                           "start1.png",
                                            CC_CALLBACK_1(GameScene::menuStartCallback, this));
     
 	startItem->setPosition(Point(size.width/2, size.height/2));
 	auto startMenu = Menu::create(startItem, NULL);
 	startMenu->setPosition(Point::ZERO);
-    startMenu->setScale(0.5);
+    startMenu->setScale(0.4);
 	node->addChild(startMenu);
     startMenu->setTag(START);
     
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
     LabelTTF* tips;
     if (lan == LanguageType::CHINESE) {
-        tips = LabelTTF::create("dfsdfsdfsdfds", "Arial", 27);
+        tips = LabelTTF::create("点击屏幕跳跃，可以连续跳跃两次", "Arial", 30);
     } else {
         tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 27);
     }
+    tips->setColor(Color3B::BLACK);
     
     auto tipsSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
     node->addChild(tips);
 
-    auto score = LabelTTF::create("SCORE : 0", "Arial", 27);
+    auto score = LabelTTF::create("SCORE : 0", "Arial", 30);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
-    score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 112));
+    score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 119));
     node->addChild(score);
     score->setTag(SCORE);
     
-    box = LayerColor::create(Color4B::RED, 50, 50);
+    box = LayerColor::create(Color4B::BBLUE, 50, 50);
     box->setPosition(Point(0, 150));
     node->addChild(box);
     box->setTag(PLAYER);
@@ -127,7 +128,7 @@ void GameScene::nextStage()
 	ostringstream oss;
 	oss << "stage_" << stageCount << ".xml";
 	string stage = oss.str();
-	drawStage(temp);
+	drawStage(stage);
 }
 
 void GameScene::drawStage(const std::string &filename)
@@ -166,11 +167,11 @@ void GameScene::update(float f)
                 oss << "NEW BEST : " << (stageCount - 1);
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 27);
+                auto score = LabelTTF::create(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
-                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 160));
+                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 169));
                 node->addChild(score);
                 score->setTag(BEST);
                 
@@ -182,25 +183,25 @@ void GameScene::update(float f)
                 oss << "BEST : " << bScore;
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 27);
+                auto score = LabelTTF::create(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
-                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 160));
+                score->setPosition(Point((size.width - scoreSize.width)/2,size.height - 169));
                 node->addChild(score);
                 score->setTag(BEST);
 
             }
             
             auto startItem = MenuItemImage::create(
-                                                   "restart.jpg",
-                                                   "restart.jpg",
+                                                   "restart1.png",
+                                                   "restart1.png",
                                                    CC_CALLBACK_1(GameScene::menuStartCallback, this));
             
             startItem->setPosition(Point(size.width/2, size.height/2));
             auto startMenu = Menu::create(startItem, NULL);
             startMenu->setPosition(Point::ZERO);
-            startMenu->setScale(0.5);
+            startMenu->setScale(0.4);
             node->addChild(startMenu);
 			stageCount = 1;
             startMenu->setTag(START);
@@ -241,6 +242,8 @@ void GameScene::menuStartCallback(Ref* pSender)
 {
     auto node = this->getChildByTag(NODE);
     clickCount = 0;
+    stageCount = 1;
+    updateScore();
     drawStage(temp);
     auto startMenu = node->getChildByTag(START);
     startMenu->removeFromParent();

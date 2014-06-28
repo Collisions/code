@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../Classes/GameScene.cpp"
-            timestampString = "425628983.573839"
+            timestampString = "425631690.276628"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "243"
@@ -191,7 +191,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
             endingLineNumber = "153"
-            landmarkName = "ItemFactory::createBgAction(int type)"
+            landmarkName = "ItemFactory::setPositionByStr(Node &amp;node, const std::string &amp;pos)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
