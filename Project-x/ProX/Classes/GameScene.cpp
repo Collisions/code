@@ -1,4 +1,4 @@
-//
+﻿//
 //  GameScene.cpp
 //  PX
 //
@@ -86,11 +86,11 @@ void GameScene::initUI()
     startMenu->setTag(START);
     
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
-    LabelTTF* tips;
+	Label* tips;
     if (lan == LanguageType::CHINESE) {
-        tips = LabelTTF::create("点击屏幕跳跃，可以连续跳跃两次", "Arial", 30);
+		tips = Label::create("双击屏幕可以连续跳跃两次！", "Arial", 30);
     } else {
-        tips = LabelTTF::create("Touch to jump, it can jump twice!", "Arial", 27);
+		tips = Label::create("Double click on the screen can be continuous jump two times!", "Arial", 27);
     }
     tips->setColor(Color3B::BLACK);
     
@@ -99,7 +99,7 @@ void GameScene::initUI()
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
     node->addChild(tips);
 
-    auto score = LabelTTF::create("SCORE : 0", "Arial", 30);
+	auto score = Label::create("SCORE : 0", "Arial", 30);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
@@ -116,7 +116,7 @@ void GameScene::initUI()
 void GameScene::updateScore()
 {
     auto node = this->getChildByTag(NODE);
-    auto score = (LabelTTF*)(node->getChildByTag(SCORE));
+	auto score = (Label*)(node->getChildByTag(SCORE));
     ostringstream oss;
     oss << "SCORE : " << (stageCount-1);
     score->setString(oss.str());
@@ -167,7 +167,7 @@ void GameScene::update(float f)
                 oss << "NEW BEST : " << (stageCount - 1);
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 30);
+				auto score = Label::create(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
@@ -183,7 +183,7 @@ void GameScene::update(float f)
                 oss << "BEST : " << bScore;
                 string best = oss.str();
                 
-                auto score = LabelTTF::create(best, "Arial", 30);
+				auto score = Label::create(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
@@ -253,9 +253,9 @@ void GameScene::menuStartCallback(Ref* pSender)
     listener->onTouchesBegan = CC_CALLBACK_2(GameScene::onTouchesBegan, this);
     dispatcher->addEventListenerWithSceneGraphPriority(listener, this);
     
-    auto b_score = (LabelTTF*)(node->getChildByTag(BEST));
+	auto b_score = (Label*)(node->getChildByTag(BEST));
     if (b_score) b_score->removeFromParent();
-    auto c_score = (LabelTTF*)(node->getChildByTag(SCORE));
+	auto c_score = (Label*)(node->getChildByTag(SCORE));
     c_score->setVisible(true);
     
     auto size = Director::getInstance()->getVisibleSize();
