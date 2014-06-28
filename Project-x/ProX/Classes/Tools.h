@@ -19,6 +19,10 @@ public:
     
     std::vector<std::string> splitStr(const std::string &str, const std::string &ch);
     
+    int getBestScore();
+    
+    void setBestScore(int score);
+    
 };
 
 

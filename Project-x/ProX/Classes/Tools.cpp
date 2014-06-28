@@ -40,3 +40,15 @@ std::vector<std::string> Tools::splitStr(const std::string &str, const std::stri
     }
     return vec;
 }
+
+int Tools::getBestScore()
+{
+    
+    return UserDefault::getInstance()->getIntegerForKey("SCORE");
+}
+
+void Tools::setBestScore(int score)
+{
+    UserDefault::getInstance()->setIntegerForKey("SCORE", score);
+}
+

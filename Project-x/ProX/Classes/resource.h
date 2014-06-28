@@ -18,6 +18,7 @@
 #define SCORE 105
 #define SHARE 106
 #define PAUSE 107
+#define BEST 108
 
 
 #endif
