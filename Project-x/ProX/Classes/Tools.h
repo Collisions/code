@@ -23,7 +23,7 @@ public:
     
     void setBestScore(int score);
     
-    std::string getWordByKey(int key);
+    std::string getWordByKey(std::string key);
     
 };
 

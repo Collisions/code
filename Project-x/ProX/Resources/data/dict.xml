@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<dict>
-    <key>1</key>
-    <string>你好!</string>
-    <key>2</key>
-    <string>我是hahaya。</string>
-</dict>
+<dic
+    c_tips = "双击屏幕可以连续跳跃两次！"
+    e_tips = "Double click on the screen can be continuous jump two times!">
+</dic>

@@ -7,6 +7,7 @@
 //
 
 #include "Tools.h"
+#include "pugixml.hpp"
 
 static Tools* tools = nullptr;
 
@@ -52,10 +53,26 @@ void Tools::setBestScore(int score)
     UserDefault::getInstance()->setIntegerForKey("SCORE", score);
 }
 
-std::string Tools::getWordByKey(int key)
+std::string Tools::getWordByKey(std::string key)
 {
+    pugi::xml_document* doc;
+    long size;
+    std::string filePath = FileUtils::getInstance()->fullPathForFilename("dict.xml");
+    //log("=>%s", filePath);
+    unsigned char* data = FileUtils::getInstance()->getFileData(filePath, "rb", &size);
     
-    return "";
+    if(!data)
+    {
+        CCLOG("read file error!");
+    }
+    doc = new pugi::xml_document();
+    //pugi::xml_parse_result result =
+    doc->load_buffer(data, size);
+    CC_SAFE_DELETE(data);
+    
+    pugi::xml_node root = doc->child("dic");
+    
+    return root.attribute(key.c_str()).as_string();
 }
 
 
