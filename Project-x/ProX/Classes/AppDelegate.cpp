@@ -28,7 +28,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     
     FileUtils::getInstance()->addSearchPath("stage");
     FileUtils::getInstance()->addSearchPath("icon");
-
+    FileUtils::getInstance()->addSearchPath("data");
     // create a scene. it's an autorelease object
     auto scene = GameScene::createScene();
 

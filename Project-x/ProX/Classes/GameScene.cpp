@@ -88,18 +88,18 @@ void GameScene::initUI()
     LanguageType lan = Application::getInstance()->getCurrentLanguage();
 	Label* tips;
     if (lan == LanguageType::CHINESE) {
-		tips = Label::create("双击屏幕可以连续跳跃两次！", "Arial", 30);
+		tips = Label::createWithSystemFont(Tools::getInstance()->getWordByKey("c_tips"), "Arial", 30);
     } else {
-		tips = Label::create("Double click on the screen can be continuous jump two times!", "Arial", 27);
+		tips = Label::createWithSystemFont(Tools::getInstance()->getWordByKey("e_tips"), "Arial", 27);
     }
     tips->setColor(Color3B::BLACK);
     
     auto tipsSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
     tips->setPosition(Point((size.width - tipsSize.width)/2,60));
-    node->addChild(tips);
+    this->addChild(tips);
 
-	auto score = Label::create("SCORE : 0", "Arial", 30);
+	auto score = Label::createWithSystemFont("SCORE : 0", "Arial", 30);
     score->setColor(Color3B::BLACK);
     auto scoreSize = tips->cocos2d::Node::getContentSize();
     // position the label on the center of the screen
@@ -167,7 +167,7 @@ void GameScene::update(float f)
                 oss << "NEW BEST : " << (stageCount - 1);
                 string best = oss.str();
                 
-				auto score = Label::create(best, "Arial", 30);
+				auto score = Label::createWithSystemFont(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
@@ -175,7 +175,7 @@ void GameScene::update(float f)
                 node->addChild(score);
                 score->setTag(BEST);
                 
-                auto c_score = (LabelTTF*)(node->getChildByTag(SCORE));
+                auto c_score = (Label*)(node->getChildByTag(SCORE));
                 c_score->setVisible(false);
 
             } else {
@@ -183,7 +183,7 @@ void GameScene::update(float f)
                 oss << "BEST : " << bScore;
                 string best = oss.str();
                 
-				auto score = Label::create(best, "Arial", 30);
+				auto score = Label::createWithSystemFont(best, "Arial", 30);
                 score->setColor(Color3B::BLACK);
                 auto scoreSize = score->cocos2d::Node::getContentSize();
                 // position the label on the center of the screen
