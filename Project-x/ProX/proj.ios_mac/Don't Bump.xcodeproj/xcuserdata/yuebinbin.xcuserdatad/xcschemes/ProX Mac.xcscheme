@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "5087E73D17EB910900C73F5D"
                BuildableName = "ProX Mac.app"
-               BlueprintName = "ProX Mac"
-               ReferencedContainer = "container:ProX.xcodeproj">
+               BlueprintName = "Don&apos;t Bump Mac"
+               ReferencedContainer = "container:Don&apos;t Bump.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -34,8 +34,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5087E73D17EB910900C73F5D"
             BuildableName = "ProX Mac.app"
-            BlueprintName = "ProX Mac"
-            ReferencedContainer = "container:ProX.xcodeproj">
+            BlueprintName = "Don&apos;t Bump Mac"
+            ReferencedContainer = "container:Don&apos;t Bump.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -53,8 +53,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5087E73D17EB910900C73F5D"
             BuildableName = "ProX Mac.app"
-            BlueprintName = "ProX Mac"
-            ReferencedContainer = "container:ProX.xcodeproj">
+            BlueprintName = "Don&apos;t Bump Mac"
+            ReferencedContainer = "container:Don&apos;t Bump.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -71,8 +71,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "5087E73D17EB910900C73F5D"
             BuildableName = "ProX Mac.app"
-            BlueprintName = "ProX Mac"
-            ReferencedContainer = "container:ProX.xcodeproj">
+            BlueprintName = "Don&apos;t Bump Mac"
+            ReferencedContainer = "container:Don&apos;t Bump.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
