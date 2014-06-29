@@ -43,7 +43,7 @@ void AppDelegate::applicationDidEnterBackground() {
     Director::getInstance()->stopAnimation();
 
     
-    Director::getInstance()->getActionManager()->pauseAllRunningActions();
+    //Director::getInstance()->getActionManager()->pauseAllRunningActions();
     // if you use SimpleAudioEngine, it must be pause
     // SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
 }
@@ -52,9 +52,9 @@ void AppDelegate::applicationDidEnterBackground() {
 void AppDelegate::applicationWillEnterForeground() {
     Director::getInstance()->startAnimation();
 
-    auto scene = Director::getInstance()->getRunningScene();
+    //auto scene = Director::getInstance()->getRunningScene();
     
-    Director::getInstance()->getActionManager()->resumeTarget(scene);
+    //Director::getInstance()->getActionManager()->resumeTarget(scene);
     // if you use SimpleAudioEngine, it must resume here
     // SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
 }
