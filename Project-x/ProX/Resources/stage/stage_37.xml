@@ -7,7 +7,7 @@
       <item tag="2" color="7" width="50" height="95" position="50,0">
     		<action type="3" dura="1" ></action>
       </item>
-      <item tag="3" color="7" width="50" height="60" position="75,0">
+      <item tag="3" color="7" width="50" height="60" position="80,0">
     		<action type="3" dura="1.5" ></action>
       </item>
     </items>
