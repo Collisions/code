@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<stage gColor="19" bgColor="18" boxColor="0" type="1">
-    <items>
-        <item tag="1" color="7" width="50" height="50" position="45,0">
-        </item>
-    </items>
-</stage>
