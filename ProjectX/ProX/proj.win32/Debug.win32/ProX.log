@@ -1,0 +1,14 @@
+﻿生成启动时间为 2014-7-20 22:02:11。
+     1>项目“G:\svn\code\trunk\ProjectX\ProX\proj.win32\ProX.vcxproj”在节点 2 上(Build 个目标)。
+     1>PreLinkEvent:
+         if not exist "G:\svn\code\trunk\ProjectX\ProX\proj.win32\Debug.win32\" mkdir "G:\svn\code\trunk\ProjectX\ProX\proj.win32\Debug.win32\"
+         xcopy /Y /Q "G:\svn\code\trunk\ProjectX\ProX\cocos2d\cocos\2d\..\..\external\websockets\prebuilt\win32\*.*" "G:\svn\code\trunk\ProjectX\ProX\proj.win32\Debug.win32\"
+         :VCEnd
+         复制了 2 个文件
+       Link:
+         ProX.vcxproj -> G:\svn\code\trunk\ProjectX\ProX\proj.win32\Debug.win32\ProX.exe
+     1>已完成生成项目“G:\svn\code\trunk\ProjectX\ProX\proj.win32\ProX.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.16
