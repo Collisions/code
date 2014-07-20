@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stage gColor="11" bgColor="9" boxColor="2">
+    <items>
+    	<item tag="1" color="7" width="50" height="50" position="40,3">
+    		<action type="1" dura="1" para="-20,0"></action>
+      </item>
+      <item tag="2" color="7" width="50" height="50" position="40,8">
+        	<action type="1" dura="1" para="0,20"></action>
+      </item> 
+      <item tag="3" color="7" width="50" height="50" position="45,3">
+        	<action type="1" dura="1" para="0,-20"></action>
+      </item>
+      <item tag="4" color="7" width="50" height="50" position="45,8">
+        	<action type="1" dura="1" para="20,0"></action>
+      </item>
+    </items>
+</stage>
