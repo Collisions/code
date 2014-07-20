@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stage gColor="3" bgColor="6" boxColor="10">
+    <items>
+        <item tag="1" color="7" width="50" height="50" position="25,0">
+        </item>
+        <item tag="2" color="7" width="50" height="50" position="50,0">
+        </item>
+        <item tag="1" color="7" width="50" height="50" position="75,0">
+        </item>
+        
+    </items>
+</stage>
